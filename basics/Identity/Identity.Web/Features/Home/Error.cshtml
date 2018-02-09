@@ -1,0 +1,36 @@
+﻿@model Web.Features.Home.ErrorViewModel
+
+@{
+    ViewBag.Title = "Error";
+    var error = Model?.Error?.Error;
+    var requestId = Model?.Error?.RequestId;
+}
+
+<div class="error-page">
+    <div class="page-header">
+        <h1>Error</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="alert alert-danger">
+                Sorry, there was an error
+
+                @if (error != null)
+                {
+                    <strong>
+                        <em>
+                            : @error
+                        </em>
+                    </strong>
+                }
+            </div>
+
+            @if (requestId != null)
+            {
+                <div class="request-id">Request Id: @requestId</div>
+            }
+        </div>
+    </div>
+</div>
+

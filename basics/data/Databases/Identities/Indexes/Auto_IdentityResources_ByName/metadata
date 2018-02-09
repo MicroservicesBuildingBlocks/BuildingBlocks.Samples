@@ -1,0 +1,1 @@
+{"Name":"Auto/IdentityResources/ByName","Collections":["IdentityResources"],"LockMode":0,"Priority":1,"MapFields":[{"Name":"Name","Indexing":"Default","Aggregation":0,"Spatial":null}]}

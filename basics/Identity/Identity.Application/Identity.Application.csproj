@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="4.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.0.0" />
+    <PackageReference Include="IdentityServer4.AspNetIdentity" Version="2.1.0" />
+    <PackageReference Include="RavenDB.Client" Version="4.0.0-rc-40025" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\external\BuildingBlocks\src\BuildingBlocks.AspnetCoreIdentity.RavenDB\BuildingBlocks.AspnetCoreIdentity.RavenDB.csproj" />
+    <ProjectReference Include="..\..\..\external\BuildingBlocks\src\BuildingBlocks.IdentityServer4.RavenDB\BuildingBlocks.IdentityServer4.RavenDB.csproj" />
+    <ProjectReference Include="..\..\..\external\BuildingBlocks\src\BuildingBlocks.Mediatr\BuildingBlocks.Mediatr.csproj" />
+  </ItemGroup>
+
+</Project>

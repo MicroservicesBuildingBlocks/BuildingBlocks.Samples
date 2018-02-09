@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+
+  echo.web:
+    image: echo.web
+    build:
+      context: .
+      dockerfile: Echo/Echo.Web/Dockerfile
+    depends_on:
+      - echo.webapi
+      - identity.web
+
+  echo.webapi:
+    image: echo.webapi
+    build:
+      context: .
+      dockerfile: Echo/Echo.WebApi/Dockerfile
+    depends_on:
+      - identity.web
+
+  identity.web:
+    image: identity.web
+    build:
+      context: .
+      dockerfile: Identity/Identity.Web/Dockerfile
+    depends_on:
+      - identities.data
+
+  identities.data:
+    image: ravendb/ravendb
+ 

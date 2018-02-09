@@ -1,0 +1,1 @@
+{"Name":"Auto/Users/ByNormalizedName","Collections":["Users"],"LockMode":0,"Priority":1,"MapFields":[{"Name":"NormalizedName","Indexing":"Default","Aggregation":0,"Spatial":null}]}

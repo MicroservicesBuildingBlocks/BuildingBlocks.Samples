@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+  echo.webapi:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://0.0.0.0:80
+      - AuthenticationAuthorityUrl=http://10.0.75.1:5000
+    ports:
+      - "5001:80"
+
+  echo.web:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://0.0.0.0:80
+      - AuthenticationAuthorityUrl=http://10.0.75.1:5000
+      - EchoApiUrl=http://echo.webapi
+    ports:
+      - "5002:80"
+
+
+  identity.web:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://0.0.0.0:80
+      - EchoApiUrl=http://localhost:5001
+      - EchoWebUrl=http://localhost:5002
+      - RavenDbUrl=http://identities.data:8080
+      - RavenDbDatabase=Identities
+    ports:
+      - "5000:80"
+
+  identities.data:
+    environment:
+      - RAVEN_ARGS='--Setup.Mode=None'
+      - RAVEN_Security_UnsecuredAccessAllowed='PrivateNetwork'
+    volumes:
+      - ./data:/opt/RavenDB/Server/RavenData
+    ports:
+      - "8080:8080"
+

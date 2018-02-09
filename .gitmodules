@@ -1,0 +1,9 @@
+[submodule "submodules/HealthChecks"]
+	path = submodules/HealthChecks
+	url = https://github.com/seven1986/HealthChecks.git
+[submodule "external/BuildingBlocks"]
+	path = external/BuildingBlocks
+	url = https://github.com/MicroservicesBuildingBlocks/BuildingBlocks.git
+[submodule "external/HealthChecks"]
+	path = external/HealthChecks
+	url = https://github.com/dotnet-architecture/HealthChecks

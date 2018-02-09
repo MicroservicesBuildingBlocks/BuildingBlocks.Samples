@@ -1,0 +1,44 @@
+﻿@using Echo.Web.Features.Home
+@model Echo.Web.Features.Home.EchoViewModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<div class="row">
+    <div class="col-md-8">
+        <section>
+            <form asp-controller="Home" asp-action="Echo" method="post" class="form-horizontal" role="form">
+                <h4>Type a message that will be send to echo.</h4>
+                <hr />
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Message" class="col-md-2 control-label"></label>
+                    <div class="col-md-10">
+                        <input asp-for="Message" class="form-control" />
+                        <span asp-validation-for="Message" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </div>
+                </div>
+
+                @if (@Model.Result != null)
+                {
+                    <hr />
+                    <div class="col-md-offset-2 col-md-10">
+                        <strong>
+                            <em>
+                                @Model.Result
+                            </em>
+                        </strong>
+                    </div>
+                }
+            </form>
+        </section>
+    </div>
+</div>
